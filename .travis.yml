@@ -10,14 +10,14 @@ scripts:
   - docker run -e CI=true drishdocker93/react-test npm test
 
 after_success:
-  - docker build -t drishdocker93/multi-client ./client
-  - docker build -t drishdocker93/multi-server ./server
-  - docker build -t drishdocker93/multi-nginx ./nginx
-  - docker build -t drishdocker93/multi-worker ./worker
+  - docker build -t drishdocker93/multi-client:latest ./client
+  - docker build -t drishdocker93/multi-server:latest ./server
+  - docker build -t drishdocker93/multi-nginx:latest ./nginx
+  - docker build -t drishdocker93/multi-worker:latest ./worker
   #login to docker cli
   - echo "$Docker_password" | docker login -u "$Docker_ID"--password-stdin
   #push images to dockerhub
-  - docker push drishdocker93/multi-client
-  - docker push drishdocker93/multi-server
-  - docker push drishdocker93/multi-nginx 
-  - docker push drishdocker93/multi-worker
+  - docker push drishdocker93/multi-client:latest
+  - docker push drishdocker93/multi-server:latest
+  - docker push drishdocker93/multi-nginx:latest
+  - docker push drishdocker93/multi-worker:latest
