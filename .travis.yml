@@ -22,14 +22,14 @@ after_success:
   - docker push drishdocker93/multi-nginx
   - docker push drishdocker93/multi-worker
 
-  deploy:
-    provider: elasticbeanstalk
-    region: "us-east-2"
-    app: "multi-docker"
-    env: "MultiDocker-env-1"
-    bucket_name: "elasticbeanstalk-us-east-2-572431736115"
-    bucket_path: "multi-docker"
-    on:
-      branch: master
-    access_key_id: $AWS_ACCESS_KEY
-    secret_access_key: $AWS_SECRET_KEY
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: "multi-docker"
+  env: "MultiDocker-env-1"
+  bucket_name: "elasticbeanstalk-us-east-2-572431736115"
+  bucket_path: "multi-docker"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
