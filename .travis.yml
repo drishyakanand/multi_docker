@@ -23,13 +23,12 @@ after_success:
   - docker push drishdocker93/multi-worker
 
   deploy:
-    edge: true
     provider: elasticbeanstalk
-    region: us-east-2
-    app: multi-docker
-    env: MultiDocker-env-1
-    bucket_name: elasticbeanstalk-us-east-2-572431736115
-    bucket_path: docker-multi
+    region: "us-east-2"
+    app: "multi-docker"
+    env: "MultiDocker-env-1"
+    bucket_name: "elasticbeanstalk-us-east-2-572431736115"
+    bucket_path: "multi-docker"
     on:
       branch: master
     access_key_id: $AWS_ACCESS_KEY
