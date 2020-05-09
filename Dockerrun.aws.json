@@ -1,6 +1,6 @@
 {
     "AWSEBDockerrunVersion": 2,
-    "containerDefinitons": [
+    "containerDefinitions": [
         {
             "name":"client",
             "image":"drishdocker93/multi-client",
