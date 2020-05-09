@@ -1,0 +1,36 @@
+{
+    "AWSEBDockerrunVersion": 2,
+    "containerDefinitons": [
+        {
+            "name":"client",
+            "image":"drishdocker93/multi-client",
+            "hostname":"client",
+            "essential": false
+        },
+        {
+            "name":"server",
+            "image":"drishdocker93/multi-server",
+            "hostname":"api",
+            "essential": false
+        },
+        {
+            "name":"worker",
+            "image":"drishdocker93/multi-worker",
+            "hostname":"worker",
+            "essential": false
+        },
+        {
+            "name":"nginx",
+            "image":"drishdocker93/multi-nginx",
+            "hostname":"nginx",
+            "essential": true,
+            "portMappings": [
+                {
+                    "hostPort": 80,
+                    "containerPort":80
+                }
+            ],
+            "links": ["client","server"]
+        }
+    ]
+}
